@@ -13,17 +13,17 @@
 <body>
 <p><span>Select your language:</span><br>
 <select name="language">
-  <option value="en_GB">British English</option>
-  <option value="fr_FR">Français</option>
-  <option value="it_IT">Italiano</option>
-  <option value="br_BR">Brasileiro</option>  
+  <option value="en">British English</option>
+  <option value="fr">Français</option>
+  <option value="it">Italiano</option>
+  <option value="br">Brasileiro</option>  
 </select>
 </p>
 
 <ul class="nav nav-sidebar">
-  <li><a href="#" data-i18n="menu.Good bye"></a></li>
-  <li><a href="#" data-i18n="menu.Hello"></a></li>
-  <li><a href="#" data-i18n="menu.Selectyourlanguage"></a></li>
+  <li><a href="#" data-i18n="MENU_Good bye"></a></li>
+  <li><a href="#" data-i18n="MENU_Hello"></a></li>
+  <li><a href="#" data-i18n="MENU_Selectyourlanguage"></a></li>
 </ul>
 
 <script type="text/javascript" src="lib/js/i18next-1.11.2.js" ></script>
@@ -31,44 +31,36 @@
 
 <script type="text/javascript"> 
 var resources = {
-  'en_GB': { 
+  'en': { 
     translation: { 
-      'menu': {
-        'Good bye': 'Good bye! $t(menu.country)',
-        'Hello': 'Hello! $t(menu.country)',
-        'Selectyourlanguage': 'Select your language: $t(menu.country)',
-		'country': 'England'
-      }                           
+        'MENU_Good bye': 'Good bye! $t(menu_country)',
+        'MENU_Hello': 'Hello! $t(menu_country)',
+        'MENU_Selectyourlanguage': 'Select your language: $t(menu_country)',
+		'MENU_country': 'England'
     } 
   },            
-  'fr_FR': { 
+  'fr': { 
     translation: { 
-      'menu': {
-        'Good bye': 'Au revoir ! $t(menu.country)',
-        'Hello': 'Bonjour ! $t(menu.country)',
-        'Selectyourlanguage': 'Sélectionner votre langage: $t(menu.country)',
-        'country': 'France'
-      }                           
+        'MENU_Good bye': 'Au revoir ! $t(menu_country)',
+        'MENU_Hello': 'Bonjour ! $t(menu_country)',
+        'MENU_Selectyourlanguage': 'Sélectionner votre langage: $t(menu_country)',
+        'MENU_country': 'France'
     } 
   },
-  'it_IT': { 
+  'it': { 
     translation: { 
-      'menu': {
-        'Good bye': 'Arrivederci! $t(menu.country)',
-        'Hello': 'Buongiorno! $t(menu.country)',
-        'Selectyourlanguage': 'Seleziona la tua lingua: $t(menu.country)',
-        'country': 'Italy'
-      }                           
+        'MENU_Good bye': 'Arrivederci! $t(menu_country)',
+        'MENU_Hello': 'Buongiorno! $t(menu_country)',
+        'MENU_Selectyourlanguage': 'Seleziona la tua lingua: $t(menu_country)',
+        'MENU_country': 'Italy'
     } 
   },
-  'br_BR': { 
+  'br': { 
     translation: { 
-      'menu': {
-        'Good bye': 'Oi! $t(menu.country)',
-        'Hello': 'Olá! $t(menu.country)',
-        'Selectyourlanguage': 'Selecione seu idioma: $t(menu.country)',
-        'country': 'Brasil'
-      }                           
+        'MENU_Good bye': 'Oi! $t(menu_country)',
+        'MENU_Hello': 'Olá! $t(menu_country)',
+        'MENU_Selectyourlanguage': 'Selecione seu idioma: $t(menu_country)',
+        'MENU_country': 'Brasil'
     } 
   }    
 };
@@ -78,8 +70,8 @@ var select = document.querySelector('select');
 var i18nList = document.querySelectorAll('[data-i18n]');
 
 i18n.init({ 
-  resStore: resources,
-  lng: 'en_GB',
+   resStore: resources,
+   lng: 'en'
 });  
   
 i18nList.forEach(function(v){
