@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>the super tiny vue.js</title>
+    <style type="text/css">
+        input {
+            outline: none;
+        }
+        #app {
+            width: 400px;
+            padding: 15px;
+            padding-top: 100px;
+            border: 1px solid #999;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2 v-text='hello' v-visible='isShow'></h2>
+        <!---
+        <input type="text" v-model='counter'>
+        <button v-on:click='add' type="button">add</button>        
+        <button v-on:click='toggle' type="button">toggle</button>
+        <p v-text='counter'></p>
+        <p v-text='info.age'></p>
+        <p v-text='wellcome.text'></p>
+        <div v-if='isShow'>
+            <p v-text='info.age'></p>
+        </div>
+        <h2>v-for directive</h2>
+        <div v-for='item in todos'>
+            <div>
+                <span v-text='$index'></span>
+                <span v-text='item.text'></span>
+            </div>
+        </div>
+        <h2 v-text='hello'></h2>
+ -->
+        <h2>SubComponent</h2>
+        <!-- <div v-for='item in todos'>
+        <sub-component info='messages'></sub-component>
+        </div> -->
+        <hello-world hello='hello' :msg='hello'></hello-world>
+    </div>
+    <script src='tinyVue.min.js'></script>
+    <!-- <script src='http://cdn.bootcss.com/vue/1.0.26/vue.js'></script> -->
+    <script>
+        var mvvm;
+        var subComponent = {
+            template: '<div><h2 v-text="name"></h2></div>',
+            data: function (){
+                return {
+                    name: 'an new component!'
+                }
+            },
+            props: ['info']
+        }
+
+        TinyVue.component('hello-world', {
+            template: '<div><h2 v-text="hello"></h2><h3 v-text="msg"></h3></div>',
+            data: function (){
+                return {
+                    name: 'hello world component!'
+                }
+            },
+            props: ['hello', 'msg']
+        });
+        var opts = {
+            el: '#app',
+            data: {
+                // isShow: true,
+                // counter: 1,
+                 hello: 'ahahah!',
+                // info: {
+                //     age: 18
+                // },
+                // person: {
+                //     weight: 20,
+                //     height: 170
+                // },
+                // todos: [
+                //     {
+                //         text: 'hello world!'
+                //     },
+                //     {
+                //         text: 'hihihihi!'
+                //     },
+                //     {
+                //         text: 'hihihihi!'
+                //     },
+                //     {
+                //         text: 'hihihihi!'
+                //     },
+                //     {
+                //         text: 'hihihihi!'
+                //     },
+                //     {
+                //         text: 'hihihihi!'
+                //     }
+                // ],
+                // items: [1,2,3,4,5,6]
+            },
+            computed: {
+                // wellcome () {
+                //     return {text: this.hello + '---' + this.info.age};
+                // }
+            },
+            components: {
+                subComponent: subComponent
+            },
+            methods: {
+                add: function () {
+                    this.counter += 1;
+                    this.info.age += 1;
+                },
+                toggle: function () {
+                    this.isShow = !this.isShow;                    
+                }
+            },
+            /*watch: {
+                counter (val) {
+                    console.log('counter: ', val);
+                },
+                info (info) {
+                    console.log('info: ', info);
+                },
+                wellcome () {
+                    console.log('wellcome: ', this.wellcome);
+                }
+            },*/
+            ready: function() {
+                var self = this;
+                // self.hello = 'Ready, go!';
+
+                // setTimeout(function () {
+                //     self.hello = 'Done!';
+                //     self.todos.push({
+                //         text: 'new messages'
+                //     });
+                //     self.todos.shift();
+                // }, 3000)
+            }
+        }
+
+        TinyVue.$directive('visible', function (value) {
+            this.el.style.visibility = value ? 'visible' : 'hidden';
+        })
+        mvvm = new TinyVue(opts);
+
+        //mvvm = new Vue(opts);
+        //console.log(mvvm);
+        // var optsCopy = opts;
+        // console.log('optsCopy: ', optsCopy);
+        // var dom = document.getElementById('app').cloneNode(true);
+        // document.body.appendChild(dom);
+        // optsCopy.el = dom;
+        //new TinyVue(optsCopy);
+        //mvvm = new Vue(opts);
+        /*console.log('mvvm: ', mvvm);*/
+    </script>
+</body>
+</html>

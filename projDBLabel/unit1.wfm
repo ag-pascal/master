@@ -1,0 +1,30 @@
+{@PAS2JS_BEGIN}
+  BeginUpdate;
+  try
+    Left := 269;
+    Height := 297;
+    Top := 250;
+    Width := 378;
+    AlphaBlend := False;
+    AlphaBlendValue := 255;
+    Caption := 'WForm1';
+    ClientHeight := 297;
+    ClientWidth := 378;
+    WButton2 := TWButton.Create(Self);
+    WButton2.BeginUpdate;
+    try
+      WButton2.Parent := Self;
+      WButton2.Left := 8;
+      WButton2.Height := 25;
+      WButton2.Top := 8;
+      WButton2.Width := 72;
+      WButton2.Caption := 'WButton2';
+      WButton2.TabOrder := 0;
+      WButton2.OnClick := WButton2Click;
+    finally
+      WButton2.EndUpdate;
+    end;
+  finally
+    EndUpdate;
+  end;
+{@PAS2JS_END}

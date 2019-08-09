@@ -1,0 +1,19 @@
+object Form4: TForm4
+  Left = 0
+  Height = 753
+  Top = 0
+  Width = 1024
+  Caption = 'Form4'
+  ClientHeight = 753
+  ClientWidth = 1024
+  LCLVersion = '1.9.0.0'
+  object Btn1: TButton
+    Left = 101
+    Height = 47
+    Top = 88
+    Width = 120
+    Caption = 'goTo 3'
+    OnClick = Btn1Click
+    TabOrder = 0
+  end
+end

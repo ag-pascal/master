@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <link rel="icon" href="data:,">
+  <title>HTML5 Internationalization Example</title>
+  <script type="text/javascript" src="project1.js"></script>
+  <style></style>
+</head>
+<body>
+  <h1 data-languagekey="HTML5 Internationalization pas2js Example">HTML5 Internationalization Example</h1>
+  <div id='languages' style="float:right;">
+      <img src='images/fr.png' class='language' data-lang='france' alt='French Flag' />
+      <img src="images/de.png" class='language' data-lang='germany' alt='German Flag' />
+      <img src="images/gb.png" class='language' data-lang='britain' alt='British Flag' />
+	      <img src="images/br.png" class='language' data-lang='brazil' alt='Brazil Flag' />
+  </div>
+  <fieldset style="clear: right;">
+  <legend>
+      <span data-languagekey="Application Form">Application Form</span>
+  </legend>
+      <span data-languagekey="Name">Name</span><br /><input type="text" /><br />
+      <span data-languagekey="Company">Company</span><br /><input type='text' /><br />
+      <span data-languagekey="Mobile No.">Mobile No.</span><br /><input type='text' /><br />
+      <span data-languagekey="Telephone No.">Telephone No.</span><br /><input type='text' /><br />
+      <label data-languagekey="Gender">Gender</label><br />
+      <select>
+        <option data-languagekey="Male">Male</option>
+        <option data-languagekey="Female">Female</option>
+        <option data-languagekey="Prefer not to say">Prefer not to say</option>
+      </select>
+  </fieldset>
+
+  <script>
+  window.addEventListener("load", rtl.run);
+
+  </script>
+  
+</body>
+</html>

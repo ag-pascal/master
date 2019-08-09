@@ -1,0 +1,14 @@
+{
+    "Name": "Name",
+    "Company": "Unternehmen",
+    "Email Address":"E-Mail-Addresse",
+    "Mobile No.": "Handynummer",
+    "Application Form": "Anmeldeformular",
+    "Telephone No.":"Telefonnummer",
+    "Gender":"Geschlecht",
+    "Male":"Männlich",
+    "Female": "Weiblich",
+    "Prefer not to say":"Mache lieber keine Angabe",
+    "HTML5 Internationalization pas2js Example": "HTML5 Internationalisierung Beispiel"
+
+}

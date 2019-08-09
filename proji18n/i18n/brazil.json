@@ -1,0 +1,13 @@
+{    
+    "Name": "Nome",
+    "Company": "Compania",
+    "Email Address":"Endereco E-mail",
+    "Mobile No.": "Numero Celular",
+    "Application Form": "Formulario Aplicativo",
+    "Telephone No.":"Numero Telefone",
+    "Gender":"Genero",
+    "Male":"Masculino",
+    "Female": "Feminino",
+    "Prefer not to say":"Prefiro nao dizer",
+    "HTML5 Internationalization pas2js Example": "HTML5 Exemplo de Internalionalizacao"
+}
